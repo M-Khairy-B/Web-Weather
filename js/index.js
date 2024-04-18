@@ -1,5 +1,5 @@
 let apikey = "3e0e3b28154c462b96a00934242703";
-let apiUrl = "http://api.weatherapi.com/v1/forecast.json?q=";
+let apiUrl = "https://api.weatherapi.com/v1/forecast.json?q=";
 let searchBox = document.getElementById("searchBox");
 let submitBtn = document.getElementById("submitBtn");
 let weatherIcon = document.getElementById("weatherIcon");
