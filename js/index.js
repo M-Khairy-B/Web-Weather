@@ -107,22 +107,22 @@ searchBox.addEventListener("input", function (event) {
 checkWeather("Cairo");
 
 // Function to get weather based on user's current location
-// async function checkWeatherByGeolocation() {
-//   try {
-//     navigator.geolocation.getCurrentPosition(
-//       async function (position) {
-//         let response = await fetch(
-//           `${apiUrl}${position.coords.latitude},${position.coords.longitude}&key=${apikey}&days=3`
-//         );
-//         let data = await response.json();
-//         checkWeather(data.location.name);
-//       },
-//       function (error) {
-//         console.error("Error getting user's location:", error);
-//       }
-//     );
-//   } catch (error) {
-//     console.error("Error getting weather by geolocation:", error);
-//   }
-// }
-// checkWeatherByGeolocation();
+async function checkWeatherByGeolocation() {
+  try {
+    navigator.geolocation.getCurrentPosition(
+      async function (position) {
+        let response = await fetch(
+          `${apiUrl}${position.coords.latitude},${position.coords.longitude}&key=${apikey}&days=3`
+        );
+        let data = await response.json();
+        checkWeather(data.location.name);
+      },
+      function (error) {
+        console.error("Error getting user's location:", error);
+      }
+    );
+  } catch (error) {
+    console.error("Error getting weather by geolocation:", error);
+  }
+}
+checkWeatherByGeolocation();
